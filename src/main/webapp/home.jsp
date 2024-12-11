@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PRO'FX - Home</title>
+    <title>FarmGo - Home</title>
     <!-- Embedded CSS -->
     <style>
         /* General Body Styles */
@@ -226,7 +226,7 @@
 <section class="hero">
     <div class="container">
         <h1>Farming Management System</h1>
-        <p>PRO'FX is a Simpler & Enhanced Farmer Management System. Explore Our Awesome <a href = "services">Services</a> Now.</p>
+        
         <div class="buttons">
             <a href="login" class="btn">Farmer Login</a>
             <a href="userlogin" class="btn">User Login</a>
