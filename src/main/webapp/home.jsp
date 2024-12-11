@@ -9,108 +9,117 @@
     <style>
         /* General Body Styles */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #F5F5F7;
+            font-family: 'Segoe UI', sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #B2C9AD;
+            color: #333;
         }
 
         /* Header Section */
         header {
-            background-color: #705C53;
-            padding: 20px 0;
-            color: #FFFFFF;
+            background-color: #008080; /* Header background color */
+            padding: 5px 0; /* Reduced padding for smaller header height */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-        .container {
+        header .container {
             max-width: 1200px;
             margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             padding: 0 20px;
-            text-align: center;
         }
 
-        nav ul {
-            list-style: none;
-            padding: 0;
+        header h1 {
+            color: #ffffff;
             margin: 0;
+            font-size: 1.8rem; /* Adjusted for a balanced look */
+        }
+
+        header nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
             display: flex;
         }
 
-        nav ul li {
-            margin: 0 10px;
+        header nav ul li {
+            margin: 0 15px;
         }
 
-        nav ul li a {
-            color: #FFFFFF;
+        header nav ul li a {
+            color: #F5F0CD;
             text-decoration: none;
-            transition: color 0.3s;
+            font-size: 16px;
+            font-weight: 500;
+            transition: color 0.3s ease;
         }
 
-        nav ul li a:hover {
-            color: #EDDDE0;
+        header nav ul li a:hover {
+            color: #FFD700;
         }
 
+        /* Hero Section */
         .hero {
-            background: url('https://img.freepik.com/premium-vector/illustration-grown-rice-round-frame-japanese-style-background_180401-1404.jpg') no-repeat center center/cover;
-            color: #FFFFFF;
-            padding: 100px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 70vh;
+            color: #ffffff;
+            background: url('https://images.deepai.org/art-image/5a2d183ac41b4a6f975da1ba78853701/farmer-standing-in-the-field-and-looking-at-h_vBHXezk.jpg') no-repeat center center/cover;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5); /* Overlay effect */
+            z-index: 1;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
         }
 
         .hero h1 {
             font-size: 3rem;
             margin-bottom: 20px;
-            color: #705C53;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
 
         .hero p {
-            font-size: 1.25rem;
-            margin-bottom: 30px;
-            color: #705C53;
-        }
-        .hero a {
-            font-size: 1.30rem;
-            margin-bottom: 30px;
-            color: #705C53 ;
-            
-            
+            font-size: 1.2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
 
-        .buttons a {
-            background-color: #705C53;
-            color: #FFFFFF;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            margin: 0 10px;
-            transition: background-color 0.3s;
-        }
-
-        .buttons a:hover {
-            background-color: #B7B7B7;
-        }
-
-        .home-section {
-            padding: 40px 0;
-        }
-
+        /* Grid Container */
         .grid-container {
-            display: flex;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
+            max-width: 1200px;
+            margin: 40px auto;
             padding: 0 20px;
-            flex-wrap: nowrap;
         }
 
         .grid-item {
-            background-color: #FFFFFF;
-            border: 1px solid #B7B7B7;
-            border-radius: 8px;
-            padding: 20px;
+            background: linear-gradient(135deg, #91AC8F, #66785F);
+            border-radius: 10px;
             text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 18%; /* Ensure all 5 cards fit in a single row */
-            cursor: pointer;
+            padding: 20px;
             transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            color: #2A3335;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .grid-item:hover {
@@ -119,31 +128,60 @@
         }
 
         .grid-item img {
-            max-width: 80px;
-            margin-bottom: 20px;
+            width: 80px;
+            margin-bottom: 15px;
         }
 
         .grid-item h3 {
-            color: #705C53;
+            font-size: 1.5rem;
             margin-bottom: 10px;
         }
 
         .grid-item p {
-            color: #B7B7B7;
+            font-size: 1rem;
         }
 
-        .grid-item a {
-            text-decoration: none;
-            color: inherit;
-        }
-          body {
-            font-family: Arial, sans-serif;
-            background-color: #F5F5F7;
-            margin: 0;
-            padding: 0;
+        /* Info Section */
+        .info-containers {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-around;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
         }
 
-		 .four-containers {
+        .info-item {
+            flex: 1;
+            min-width: 250px;
+            background: linear-gradient(135deg,  #91AC8F, #66785F);
+            border-radius: 10px;
+            color: #2A3335;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .info-item h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .info-item p {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        /* Additional Styling */
+        .four-containers {
             display: flex;
             gap: 15px;
             justify-content: space-around;
@@ -219,27 +257,29 @@
             <h3>To Contact or Feedback Us</h3>
             <p>Get in touch with our support team anytime.</p>
         </div>
-        <div class="grid-item" onclick="location.href='help';">
-            <img src="https://www.svgrepo.com/show/415825/contact-headset-communication.svg" alt="Help 24/7">
-            <h3>Help 24/7</h3>
-            <p>We are available round the clock to assist you.</p>
-        </div>
-    </div>
-    <div class="four-containers">
-        <div class="container-item" style="background-image: url('https://th.bing.com/th/id/OIP.vj7u8l9tc3D0fZV5O_GwiAHaE8?rs=1&pid=ImgDetMain');">
-            <h3>Sustainability</h3>
-        </div>
-        <div class="container-item" style="background-image: url('https://thumbs.dreamstime.com/b/doctor-writing-word-food-safety-marker-medical-concept-doctor-writing-word-food-safety-marker-medical-concept-203404540.jpg');">
-            <h3>Food Safety</h3>
-        </div>
-        <div class="container-item" style="background-image: url('https://th.bing.com/th/id/OIP.0roWIEMjbeuBckPTM-RJbgHaE7?rs=1&pid=ImgDetMain');">
-            <h3>Traceability (Future)</h3>
-        </div>
-        <div class="container-item" style="background-image: url('https://th.bing.com/th/id/OIP.4OWLOr6br36uKS96FSRmVQHaE8?rs=1&pid=ImgDetMain');">
-            <h3>Growth Monitoring</h3>
+        <div class="grid-item" onclick="location.href='faqs';">
+            <img src="https://www.svgrepo.com/show/42847/question-mark.svg" alt="FAQs">
+            <h3>FAQs</h3>
+            <p>Find answers to frequently asked questions.</p>
         </div>
     </div>
 </section>
+
+<section class="info-containers">
+    <div class="info-item">
+        <h3>Pro'Fx Farmers</h3>
+        <p>Empowering farmers with advanced tools to boost productivity.</p>
+    </div>
+    <div class="info-item">
+        <h3>Online Transactions</h3>
+        <p>Safe and secure online transactions for seamless buying and selling.</p>
+    </div>
+    <div class="info-item">
+        <h3>Rural Entrepreneurship</h3>
+        <p>Promoting entrepreneurship in rural areas through innovative solutions.</p>
+    </div>
+</section>
+
 
 </body>
 </html>
